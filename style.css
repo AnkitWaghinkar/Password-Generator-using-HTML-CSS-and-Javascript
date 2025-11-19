@@ -1,0 +1,236 @@
+:root {
+    --body-bg: #b2c5df; 
+    --div-bg: #2655ad;   
+    --group-bg: #426ec2; 
+    --accent: #ffe8db;  
+    --text: #e8f0f5d5; 
+    --btn-primary: #ffe8db; 
+    --btn-hover: #b4c6e6; 
+    --toast-bg: var(--body-bg);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--text);
+}
+
+body{
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--body-bg);
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 1rem;
+    width: 18rem;
+    border-radius: 0.5rem;
+    background-color: var(--div-bg);
+    box-shadow: 5px 5px 22px 0px rgb(23, 37, 56),
+    -2px -2px 10px 0 rgb(162, 184, 231);
+    -webkit-box-shadow: 5px 5px 22px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 22px 1px rgba(0,0,0,0.75);
+}
+
+.inputBox{
+    position: relative;
+}
+
+.passwordDisplay{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    width: 19.198rem;
+    text-overflow: ellipsis;
+    background-color: var(--group-bg);
+}
+
+#copyPass{
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    z-index: 2;
+    color: var(--text);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#copyPass:hover{
+    color: #0639a5;
+}
+
+.passwordLength{
+    margin-top: 1rem;
+}
+
+.group{
+    width: 90%;
+    display: flex;
+    margin-block: 0.2rem;
+    border-radius: 0.4rem;
+    background-color: var(--group-bg);
+    padding: 0.2rem 1.5rem;
+}
+
+.group p{
+    line-height: 2.5rem;
+}
+
+#rangeSlider{
+    width: 100%;
+    height: 0.2rem;
+    margin-block: 1.1rem;
+    margin-inline: 0.6rem;
+    accent-color: #0639a5;
+    cursor: grab;
+}
+
+#rangeSlider:active{
+    cursor: grabbing;
+}
+
+.settingsTitle{
+    margin-top: 1rem;
+}
+
+.group label{
+    flex-basis: 100%;
+    font-size: 0.95rem;
+    line-height: 2.5rem;
+}
+
+input[type="checkbox"]{
+    height: 1rem;
+    width: 1.4rem;
+    position: relative;
+    top: 0.78rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #dee6e9;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 0 0.5rem rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+input:checked[type="checkbox"]{
+    background-color: #0638a5a4;
+}
+
+input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    height: 0.8rem;
+    width: 0.8rem;
+    top: 51%;
+    left: 0;
+    border-radius: 50%;
+    background-color: #0639a5;
+    transform: translateY(-51%);
+    box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+input:checked[type="checkbox"]::before{
+    left: 0.5rem;
+    background-color: #dee6e9;
+}
+
+label{
+    cursor: pointer;
+}
+
+.genBtn{
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 1.1rem;
+    color: var(--div-bg);
+    background-color: var(--btn-primary);
+    transition: all 0.2s ease-in-out;
+}
+
+.genBtn:hover{
+    transform: translateY(-0.2rem);
+    background-color: var(--btn-hover);
+}
+
+.genBtn:active{
+    background-color: var(--btn-primary);
+}
+
+.toast{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 60px;
+    border-radius: 1rem;
+    background: var(--toast-bg);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden;
+    animation: 0.8s toasterShow linear forwards;
+    box-shadow: 4px 4px 10px 0 rgb(72, 87, 117),
+                -2px -2px 10px 0 rgb(213, 226, 255);
+}
+
+@keyframes toasterShow{
+    to{
+        width: 280px;
+    }
+}
+
+.toast p{
+    color: black;
+}
+
+.toast::before{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: var(--div-bg);
+    border-radius: 1rem;
+    animation: 5s toaster linear forwards;
+}
+
+@keyframes toaster{
+    to{
+        width: 0;
+    }
+}
+
+.show-toast{
+    display: flex;
+    opacity: 1;
+}
