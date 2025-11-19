@@ -1,4 +1,4 @@
-# Password-Generator-using-HTML-CSS-and-Javascript
+# Password Generator
 
 ## Description
 A password generator built with HTML, CSS, and JavaScript. It generates random passwords with customizable length and character types.
@@ -11,6 +11,9 @@ A password generator built with HTML, CSS, and JavaScript. It generates random p
 
 ## Technologies Used
 HTML, CSS and Javascript
+
+## Screenshot
+Here is a preview of the Password Generator:
 
 <img width="1024" height="640" alt="Password Generator preview" src="https://github.com/user-attachments/assets/261083a4-a3bb-4f69-8e94-fbf46c617c10" />
 
